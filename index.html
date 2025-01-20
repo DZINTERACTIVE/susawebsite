@@ -11,9 +11,7 @@
       }
     </style>
   </head>
-
   <body></body>
-
   <?xml version="1.0" encoding="utf-8"?>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,16 +20,11 @@
     height="567.246px"
     xmlns:bx="https://boxy-svg.com"
     id="MapSVG"
+    style="position: absolute; top: 15%"
   >
     <defs>
       <style type="text/css" id="style_css_sheet">
-        /*
- * Below are Cascading Style Sheet (CSS) definitions in use in this file,
- * which allow easily changing how states are displayed.
- * Modified from the world version of this map.
- */
-
-        /* Blank color */
+        /* * Below are Cascading Style Sheet (CSS) definitions in use in this file, * which allow easily changing how states are displayed. * Modified from the world version of this map. */ /* Blank color */
         .ak,
         .al,
         .ar,
@@ -85,13 +78,8 @@
         .wi,
         .wv,
         .wy {
-          fill: #88bb88;
-          /* dull green */
-        }
-
-        /*
- * land
- */
+          fill: #88bb88; /* dull green */
+        } /* * land */
         .landxx {
           fill: #b9b9b9;
           fill-opacity: 1;
@@ -100,19 +88,10 @@
           stroke-width: 0.5;
           stroke-miterlimit: 3.97446823;
           stroke-dasharray: none;
-        }
-
-        /*
- * Styles for coastlines of islands with no borders
- */
+        } /* * Styles for coastlines of islands with no borders */
         .coastxx {
           stroke-width: 0.3;
-        }
-
-        /*
- * Sea
- */
-
+        } /* * Sea */
         .ocean {
           opacity: 1;
           color: #000000;
@@ -135,7 +114,6 @@
           display: inline;
           overflow: visible;
         }
-
         .lake {
           fill: white;
           fill-opacity: 1;
@@ -1823,16 +1801,9 @@
       1
     </text>
   </svg>
-
   <p
     id="Republican Count"
-    style="
-      position: absolute;
-      left: 70%;
-      font-size: 0.7cm;
-      color: red;
-      font-family: monospace;
-    "
+    style="position: absolute; top: 3%; left: 68%; color: red; font-size: 0.7cm"
   >
     Republican: 0
   </p>
@@ -1840,21 +1811,18 @@
     id="Democrat Count"
     style="
       position: absolute;
-      left: 20%;
-      font-size: 0.7cm;
+      top: 3%;
+      left: 25%;
       color: blue;
-      font-family: monospace;
+      font-size: 0.7cm;
     "
   >
     Democrat: 0
   </p>
 </html>
-
 <script>
-  //Global Variables
   var repInt = 0;
   var demInt = 0;
-  //MASS
   var selectedRepMass = false;
   var selectedDemMass = false;
   var maRotation = 0;
@@ -1869,7 +1837,6 @@
           "Democrat: " + demInt;
         selectedDemMass = false;
       }
-
       repInt += 11;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -1877,24 +1844,20 @@
     } else if (maRotation === 2) {
       var maPath = document.getElementById("MA");
       maPath.style.fill = "#0000FF";
-
       if (selectedRepMass) {
         repInt -= 11;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedRepMass = false;
       }
-
       demInt += 11;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectedDemMass = true;
-
       maRotation = 0;
     }
   });
 
-  //MINN
   var selectedRepMinn = false;
   var selectedDemMinn = false;
   var minnRotation = 0;
@@ -1906,10 +1869,9 @@
       if (selectedDemMinn) {
         demInt -= 10;
         document.getElementById("Democrat Count").innerHTML =
-          "Democrat: " + demInt;
+          "Democrat:        " + demInt;
         selectedDemMinn = false;
       }
-
       repInt += 10;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -1917,24 +1879,19 @@
     } else if (minnRotation === 2) {
       var minnPath = document.getElementById("MN");
       minnPath.style.fill = "#0000FF";
-
       if (selectedRepMinn) {
         repInt -= 10;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedRepMinn = false;
       }
-
       demInt += 10;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectedDemMinn = true;
-
       minnRotation = 0;
     }
   });
-
-  //MT
   var selectedMTRep = false;
   var selectedMTDem = false;
   var montanaRotation = 0;
@@ -1943,14 +1900,12 @@
     if (montanaRotation === 1) {
       var montanaPath = document.getElementById("MT");
       montanaPath.style.fill = "#FF0000";
-
       if (selectedMTDem) {
         demInt -= 4;
         document.getElementById("Democrat Count").innerHTML =
-          "Democrat: " + demInt;
+          "Democrat:         " + demInt;
         selectedMTDem = false;
       }
-
       repInt += 4;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -1958,14 +1913,12 @@
     } else if (montanaRotation === 2) {
       var montanaPath = document.getElementById("MT");
       montanaPath.style.fill = "#0000FF";
-
       if (selectedMTRep) {
         repInt -= 4;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedMTRep = false;
       }
-
       demInt += 4;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -1973,8 +1926,6 @@
       montanaRotation = 0;
     }
   });
-
-  //HI
   var selectedHIDem = false;
   var selectedHIRep = false;
   var hiRotation = 0;
@@ -1983,14 +1934,12 @@
     if (hiRotation === 1) {
       var hiPath = document.getElementById("HI");
       hiPath.style.fill = "#FF0000";
-
       if (selectedHIDem) {
         demInt -= 4;
         document.getElementById("Democrat Count").innerHTML =
           "Democrat: " + demInt;
         selectedHIDem = false;
       }
-
       repInt += 4;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -1998,24 +1947,19 @@
     } else if (hiRotation === 2) {
       var hiPath = document.getElementById("HI");
       hiPath.style.fill = "#0000FF";
-
       if (selectedHIRep) {
         repInt -= 4;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedHIRep = false;
       }
-
       demInt += 4;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectedHIDem = true;
-
       hiRotation = 0;
     }
   });
-
-  //ID
   var selectedIDDem = false;
   var selectedIDRep = false;
   var idRotation = 0;
@@ -2024,14 +1968,12 @@
     if (idRotation === 1) {
       var idPath = document.getElementById("ID");
       idPath.style.fill = "#FF0000";
-
       if (selectedIDDem) {
         demInt -= 4;
         document.getElementById("Democrat Count").innerHTML =
           "Democrat: " + demInt;
         selectedIDDem = false;
       }
-
       repInt += 4;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2039,24 +1981,19 @@
     } else if (idRotation === 2) {
       var idPath = document.getElementById("ID");
       idPath.style.fill = "#0000FF";
-
       if (selectedIDRep) {
         repInt -= 4;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedIDRep = false;
       }
-
       demInt += 4;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectedIDDem = true;
-
       idRotation = 0;
     }
   });
-
-  //WA
   var selectedWADem = false;
   var selectedWARep = false;
   var waRotation = 0;
@@ -2065,14 +2002,12 @@
     if (waRotation === 1) {
       var waPath = document.getElementById("WA");
       waPath.style.fill = "#FF0000";
-
       if (selectedWADem) {
         demInt -= 12;
         document.getElementById("Democrat Count").innerHTML =
           "Democrat: " + demInt;
         selectedWADem = false;
       }
-
       repInt += 12;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2080,14 +2015,12 @@
     } else if (waRotation === 2) {
       var waPath = document.getElementById("WA");
       waPath.style.fill = "#0000FF";
-
       if (selectedWARep) {
         repInt -= 12;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedWARep = false;
       }
-
       demInt += 12;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -2095,8 +2028,6 @@
       waRotation = 0;
     }
   });
-
-  //AZ
   var azRotation = 0;
   var selectedAZDem = false;
   var selectedAZRep = false;
@@ -2105,14 +2036,12 @@
     if (azRotation === 1) {
       var azPath = document.getElementById("AZ");
       azPath.style.fill = "#FF0000";
-
       if (selectedAZDem) {
         demInt -= 11;
         document.getElementById("Democrat Count").innerHTML =
           "Democrat: " + demInt;
         selectedAZDem = false;
       }
-
       repInt += 11;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2120,14 +2049,12 @@
     } else if (azRotation === 2) {
       var azPath = document.getElementById("AZ");
       azPath.style.fill = "#0000FF";
-
       if (selectedAZRep) {
         repInt -= 11;
         document.getElementById("Republican Count").innerHTML =
           "Republican: " + repInt;
         selectedAZRep = false;
       }
-
       demInt += 11;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -2135,8 +2062,6 @@
       azRotation = 0;
     }
   });
-
-  //CA
   var caRotation = 0;
   var selectCADem = false;
   var selectCARep = false;
@@ -2151,7 +2076,6 @@
           "Democrat: " + demInt;
         selectCADem = false;
       }
-
       repInt += 54;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2165,7 +2089,6 @@
           "Republican: " + repInt;
         selectCARep = false;
       }
-
       demInt += 54;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -2173,8 +2096,6 @@
       caRotation = 0;
     }
   });
-
-  //CO
   var coRotation = 0;
   var selectCORep = false;
   var selectCODem = false;
@@ -2189,7 +2110,6 @@
           "Democrat: " + demInt;
         selectCODem = false;
       }
-
       repInt += 10;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2203,7 +2123,6 @@
           "Republican: " + repInt;
         selectCORep = false;
       }
-
       demInt += 10;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -2211,8 +2130,6 @@
       coRotation = 0;
     }
   });
-
-  //NV
   var nvRotation = 0;
   var selectNVDem = false;
   var selectNVRep = false;
@@ -2227,7 +2144,6 @@
           "Democrat: " + demInt;
         selectNVDem = false;
       }
-
       repInt += 6;
       document.getElementById("Republican Count").innerHTML =
         "Republican: " + repInt;
@@ -2249,7 +2165,6 @@
     }
   });
 
-  //NM
   var selectNMDem = false;
   var selectNMRep = false;
   var nmRotation = 0;
@@ -2285,7 +2200,6 @@
     }
   });
 
-  //OR
   var orRotation = 0;
   var selectORDem = false;
   var selectORRep = false;
@@ -2321,7 +2235,6 @@
     }
   });
 
-  //UT
   var utRotation = 0;
   var selectUTDem = false;
   var selectUTRep = false;
@@ -2357,7 +2270,6 @@
     }
   });
 
-  //ND
   var ndRotation = 0;
   var selectNDDem = false;
   var selectNDRep = false;
@@ -2385,7 +2297,6 @@
           "Republican: " + repInt;
         selectNDRep = false;
       }
-
       demInt += 3;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
@@ -2394,7 +2305,6 @@
     }
   });
 
-  //WY
   var wyRotation = 0;
   var selectWYDem = false;
   var selectWYRep = false;
@@ -2430,7 +2340,6 @@
     }
   });
 
-  //AR
   var arRotation = 0;
   var selectARRep = false;
   var selectARDem = false;
@@ -2466,7 +2375,6 @@
     }
   });
 
-  //IA
   var iaRotation = 0;
   var selectIADem = false;
   var selectIARep = false;
@@ -2502,7 +2410,6 @@
     }
   });
 
-  //KS
   var ksRotation = 0;
   var selectKSDem = false;
   var selectKSRep = false;
@@ -2538,7 +2445,6 @@
     }
   });
 
-  //MO
   var moRotation = 0;
   var selectMODem = false;
   var selectMORep = false;
@@ -2574,7 +2480,6 @@
     }
   });
 
-  //NE
   var neRotation = 0;
   document.getElementById("NE").addEventListener("click", function () {
     neRotation++;
@@ -2588,7 +2493,6 @@
     }
   });
 
-  //OK
   var okRotation = 0;
   var selectOKDem = false;
   var selectOKRep = false;
@@ -2624,7 +2528,6 @@
     }
   });
 
-  //SD
   var sdRotation = 0;
   var selectSDDem = false;
   var selectSDRep = false;
@@ -2660,7 +2563,6 @@
     }
   });
 
-  //LA
   var laRotation = 0;
   var selectLADem = false;
   var selectLARep = false;
@@ -2696,7 +2598,6 @@
     }
   });
 
-  //TX
   var txRotation = 0;
   var selectTXDem = false;
   var selectTXRep = false;
@@ -2732,7 +2633,6 @@
     }
   });
 
-  //CT
   var ctRotation = 0;
   var selectCTDem = false;
   var selectCTRep = false;
@@ -2768,7 +2668,6 @@
     }
   });
 
-  //NH
   var nhRotation = 0;
   var selectNHDem = false;
   var selectNHRep = false;
@@ -2804,7 +2703,6 @@
     }
   });
 
-  //RI
   var riRotation = 0;
   var selectRIDem = false;
   var selectRIRep = false;
@@ -2840,7 +2738,6 @@
     }
   });
 
-  //VT
   var vtRotation = 0;
   var selectVTDem = false;
   var selectVTRep = false;
@@ -2876,7 +2773,6 @@
     }
   });
 
-  //AL
   var alRotation = 0;
   var selectALDem = false;
   var selectALRep = false;
@@ -2912,7 +2808,6 @@
     }
   });
 
-  //FL
   var flRotation = 0;
   var selectFLDem = false;
   var selectFLRep = false;
@@ -2948,7 +2843,6 @@
     }
   });
 
-  //GA
   var gaRotation = 0;
   var selectGADem = false;
   var selectGARep = false;
@@ -2984,7 +2878,6 @@
     }
   });
 
-  //MS
   var msRotation = 0;
   var selectMSDem = false;
   var selectMSRep = false;
@@ -3020,7 +2913,6 @@
     }
   });
 
-  //SC
   var scRotation = 0;
   var selectSCDem = false;
   var selectSCRep = false;
@@ -3056,7 +2948,6 @@
     }
   });
 
-  //IL
   var ilRotation = 0;
   var selectILDem = false;
   var selectILRep = false;
@@ -3092,7 +2983,6 @@
     }
   });
 
-  //IN
   var inRotation = 0;
   var selectINDem = false;
   var selectINRep = false;
@@ -3128,7 +3018,6 @@
     }
   });
 
-  //KY
   var kyRotation = 0;
   var selectKYDem = false;
   var selectKYRep = false;
@@ -3164,7 +3053,6 @@
     }
   });
 
-  //NC
   var ncRotation = 0;
   var selectNCDem = false;
   var selectNCRep = false;
@@ -3200,7 +3088,6 @@
     }
   });
 
-  //OH
   var ohRotation = 0;
   var selectOHDem = false;
   var selectOHRep = false;
@@ -3236,7 +3123,6 @@
     }
   });
 
-  //TN
   var tnRotation = 0;
   var selectTNDem = false;
   var selectTNRep = false;
@@ -3272,7 +3158,6 @@
     }
   });
 
-  //VA
   var vaRotation = 0;
   var selectVADem = false;
   var selectVARep = false;
@@ -3308,7 +3193,6 @@
     }
   });
 
-  //WI
   var wiRotation = 0;
   var selectWIDem = false;
   var selectWIRep = false;
@@ -3344,7 +3228,6 @@
     }
   });
 
-  //WV
   var wvRotation = 0;
   var selectWVDem = false;
   var selectWVRep = false;
@@ -3380,7 +3263,6 @@
     }
   });
 
-  //DE
   var deRotation = 0;
   var selectDEDem = false;
   var selectDERep = false;
@@ -3416,7 +3298,6 @@
     }
   });
 
-  //DC
   var dcRotation = 0;
   var selectDCDem = false;
   var selectDCRep = false;
@@ -3452,7 +3333,6 @@
     }
   });
 
-  //MD
   var mdRotation = 0;
   var selectMDDem = false;
   var selectMDRep = false;
@@ -3488,7 +3368,6 @@
     }
   });
 
-  //NJ
   var njRotation = 0;
   var selectNJDem = false;
   var selectNJRep = false;
@@ -3524,7 +3403,6 @@
     }
   });
 
-  //PA
   var paRotation = 0;
   var selectPADem = false;
   var selectPARep = false;
@@ -3559,7 +3437,6 @@
       paRotation = 0;
     }
   });
-
   var meRotation = 0;
   document.getElementById("ME").addEventListener("click", function () {
     meRotation++;
@@ -3573,7 +3450,6 @@
     }
   });
 
-  //MI
   var miRotation = 0;
   var selectMIDem = false;
   var selectMIRep = false;
@@ -3609,7 +3485,6 @@
     }
   });
 
-  //AK
   var akRotation = 0;
   var selectAKDem = false;
   var selectAKRep = false;
@@ -3645,7 +3520,6 @@
     }
   });
 
-  //PR
   var prRotation = 0;
   var selectPRDem = false;
   var selectPRRep = false;
@@ -3681,7 +3555,6 @@
     }
   });
 
-  //NE1
   var ne1Rotation = 0;
   var selectNE1Dem = false;
   var selectNE1Rep = false;
@@ -3717,7 +3590,6 @@
     }
   });
 
-  //NE2
   var ne2Rotation = 0;
   var selectNE2Dem = false;
   var selectNE2Rep = false;
@@ -3753,7 +3625,6 @@
     }
   });
 
-  //ME1
   var me1Rotation = 0;
   var selectME1Dem = false;
   var selectME1Rep = false;
@@ -3781,7 +3652,7 @@
           "Republican: " + repInt;
         selectME1Rep = false;
       }
-      demInt += 2;
+      demInt += 3;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectME1Dem = true;
@@ -3789,7 +3660,6 @@
     }
   });
 
-  //ME2
   var me2Rotation = 0;
   var selectME2Dem = false;
   var selectME2Rep = false;
@@ -3825,7 +3695,6 @@
     }
   });
 
-  //NY
   var nyRotation = 0;
   var selectNYDem = false;
   var selectNYRep = false;
@@ -3860,9 +3729,7 @@
       nyRotation = 0;
     }
   });
-
   const mapSvg = document.getElementById("MapSVG");
   mapSvg.style.position = "absolute";
   mapSvg.style.left = "135px";
-  mapSvg.style.top = "90px";
 </script>
