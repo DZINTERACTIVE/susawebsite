@@ -1824,8 +1824,30 @@
     </text>
   </svg>
 
-  <p id="Republican Count">Republican: 0</p>
-  <p id="Democrat Count">Democrat: 0</p>
+  <p
+    id="Republican Count"
+    style="
+      position: absolute;
+      left: 70%;
+      font-size: 0.7cm;
+      color: red;
+      font-family: monospace;
+    "
+  >
+    Republican: 0
+  </p>
+  <p
+    id="Democrat Count"
+    style="
+      position: absolute;
+      left: 20%;
+      font-size: 0.7cm;
+      color: blue;
+      font-family: monospace;
+    "
+  >
+    Democrat: 0
+  </p>
 </html>
 
 <script>
@@ -3759,7 +3781,7 @@
           "Republican: " + repInt;
         selectME1Rep = false;
       }
-      demInt += 3;
+      demInt += 2;
       document.getElementById("Democrat Count").innerHTML =
         "Democrat: " + demInt;
       selectME1Dem = true;
@@ -3842,4 +3864,5 @@
   const mapSvg = document.getElementById("MapSVG");
   mapSvg.style.position = "absolute";
   mapSvg.style.left = "135px";
+  mapSvg.style.top = "90px";
 </script>
