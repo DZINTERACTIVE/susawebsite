@@ -1819,6 +1819,11 @@
   >
     Democrat: 0
   </p>
+  <button type="button" id="ElectoralMapLive">Live Electoral Map</button>
+  <p style="position: absolute; top: 95%; left: 32.5%">
+    Click a state once to turn it Republican, and two times to turn it
+    Democratic.
+  </p>
 </html>
 <script>
   var repInt = 0;
@@ -3732,4 +3737,10 @@
   const mapSvg = document.getElementById("MapSVG");
   mapSvg.style.position = "absolute";
   mapSvg.style.left = "135px";
+
+  document
+    .getElementById("ElectoralMapLive")
+    .addEventListener("click", function () {
+      window.location.href = "electoralmaplive.html";
+    });
 </script>
